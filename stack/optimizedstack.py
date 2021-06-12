@@ -19,6 +19,7 @@ class MinStack:
             self.s.append(val* 2 - self.minval)
             #sets minimum value to value since its higher
             self.minval = val
+            print(self.minval)
         else:
             #else, just append value
             self.s.append(val)
@@ -27,6 +28,7 @@ class MinStack:
     def pop(self) -> None:
         if self.s:
             if self.s[-1] < self.minval:
+                #FORMULA THAT GETS THE MINOR VALUE AFTER POPPING THE VALUE THAT WAS THE MINOR
                 self.minval = self.minval * 2 - self.s[-1]
             self.s.pop()
 
@@ -44,8 +46,16 @@ class MinStack:
 
 # Your MinStack object will be instantiated and called as such:
 obj = MinStack()
-obj.push(3)
-obj.push(1)
+
 # obj.pop()
 # param_3 = obj.top()
 # param_4 = obj.getMin()
+
+minStack = MinStack()
+minStack.push(-2)
+minStack.push(0)
+minStack.push(-3)
+minStack.getMin()
+minStack.pop()
+minStack.top()   
+minStack.getMin() 
